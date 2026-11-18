@@ -1,0 +1,29 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+tfplan
+plan.txt
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Local-only variables (your IP etc.)
+local.auto.tfvars
+
+# Never commit credentials
+*.json.key
+*-key.json
+credentials.json
+.env
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store

@@ -1,0 +1,24 @@
+# Optional: run checks before every commit.
+#   pip install pre-commit && pre-commit install
+# Uses only locally installed tools (terraform, tflint, checkov).
+repos:
+  - repo: local
+    hooks:
+      - id: terraform-fmt
+        name: terraform fmt
+        entry: terraform fmt -recursive terraform
+        language: system
+        pass_filenames: false
+        files: \.tf$
+      - id: tflint
+        name: tflint
+        entry: bash -c 'tflint --recursive --config="$PWD/.tflint.hcl"'
+        language: system
+        pass_filenames: false
+        files: \.tf$
+      - id: checkov
+        name: checkov
+        entry: checkov -d terraform --config-file .checkov.yaml
+        language: system
+        pass_filenames: false
+        files: \.tf$

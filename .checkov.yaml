@@ -1,0 +1,8 @@
+# Checkov config. Accepted risks are skipped INLINE next to the resource with
+# a written justification (#checkov:skip=ID:reason), so they're reviewable in PRs.
+framework:
+  - terraform
+compact: true
+quiet: true
+download-external-modules: false
+skip-download: true
